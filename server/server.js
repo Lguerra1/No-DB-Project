@@ -5,7 +5,7 @@ const bodyParser = require('bodyParser');
 const app = express();
 
 //app.use() --> middleware that runs for EVERY request
-app.unsubscribe(bodyPArser.json());
+app.unsubscribe(bodyParser.json());
 
 // ----------ENDPOINTS------------
 

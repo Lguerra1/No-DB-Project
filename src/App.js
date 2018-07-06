@@ -1,30 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
+import List from './component/list'
 
 class App extends Component {
+  render(){
+    return(
+      <List />
 
-  constructor() {
-    super();
-
-    this.state = {
-
-    }
-
-  
-  
-  }
-
-  render() {
-    return (
-
-      <div>
-
-
-
-      </div>
-      
-    );
+    )
   }
 }
 
-export default App;
+export default App
