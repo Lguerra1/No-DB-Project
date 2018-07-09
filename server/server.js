@@ -9,6 +9,7 @@ const app = express();
 
 //app.use() --> middleware that runs for EVERY request
 app.use(bodyParser.json());
+
 app.get("/user", controller.users)
 // controller(app);
 

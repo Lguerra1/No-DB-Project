@@ -52,13 +52,13 @@ export default class List extends Component {
   render() {
     return (
       <div>                
-        <button onClick={this.mcTester}>Click me for Star Wars </button>        
+        <button onClick={this.mcTester}>Click for a Star Wars Character </button>        
         <h1>Name: {this.state.name.name}</h1>
         <h1>Height: {this.state.name.height}</h1>
         <h1>Mass: {this.state.name.mass}</h1>
         <h1>Birth Year: {this.state.name.birth_year}</h1>
 
-        <button onClick={this.whatever}>Click me for some lauren impsum!</button>
+        <button onClick={this.whatever}>Click for placeholder text!</button>
         <h1>{this.state.title}</h1>
         
         

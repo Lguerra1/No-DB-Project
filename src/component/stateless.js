@@ -43,7 +43,7 @@ export default class Stateless extends Component {
     render(){
         return(
             <div>
-                <button onClick={this.handleClick}>Click me</button>
+                <button onClick={this.handleClick}>Click for client info</button>
             <h2>Email: {this.state.email}</h2>
             <h2>Username: {this.state.userName}</h2>
             </div>
