@@ -8,14 +8,27 @@ export default class Stateless extends Component {
         super(props);
 
         this.state ={
-            url: ''
+            url: '',
+            email: '',
+            userName: ''
         }
 
         this.getStuff = this.getStuff.bind(this);
+        this.handleClick = this.handleClick.bind(this);
 
         
 
     };
+
+    handleClick(){
+        axios.get("/user").then(info => {
+            this.setState({
+                email: info.data.email, userName: info.data.username})
+
+        
+        console.log(info)})
+
+    }
 
     getStuff() {
         axios.get("https://jsonplaceholder.typicode.com/photos/5").then(response =>{
@@ -30,10 +43,9 @@ export default class Stateless extends Component {
     render(){
         return(
             <div>
-            <button onClick={this.getStuff}>Click on me for Img </button>
-            <img src={this.state.url}/>
-            
-
+                <button onClick={this.handleClick}>Click me</button>
+            <h2>Email: {this.state.email}</h2>
+            <h2>Username: {this.state.userName}</h2>
             </div>
         )
     }

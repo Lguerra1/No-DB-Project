@@ -9,12 +9,13 @@ const app = express();
 
 //app.use() --> middleware that runs for EVERY request
 app.use(bodyParser.json());
-controller(app);
+app.get("/user", controller.users)
+// controller(app);
 
 
 
-app.listen(3000, () => {
-console.log("Battle Station Operational", 3000 );
+app.listen(3005, () => {
+console.log("Battle Station Operational", 3005 );
 });
 
 

@@ -37,10 +37,11 @@ export default class List extends Component {
   }
 
   mcTester() {
-      axios.get("https://swapi.co/api/people/4").then(response => {
+    var randomer = Math.floor((Math.random() * 100 ) +1)
+      axios.get("https://swapi.co/api/people/" + randomer).then(response => {
           console.log(response);
           this.setState({
-              name: response.data.name
+              name: response.data
 
           })
       })
@@ -52,9 +53,15 @@ export default class List extends Component {
     return (
       <div>                
         <button onClick={this.mcTester}>Click me for Star Wars </button>        
-        <h1>{this.state.name}</h1>        
+        <h1>Name: {this.state.name.name}</h1>
+        <h1>Height: {this.state.name.height}</h1>
+        <h1>Mass: {this.state.name.mass}</h1>
+        <h1>Birth Year: {this.state.name.birth_year}</h1>
+
         <button onClick={this.whatever}>Click me for some lauren impsum!</button>
         <h1>{this.state.title}</h1>
+        
+        
                     
         </div>
 
