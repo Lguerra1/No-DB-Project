@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
 import './App.css';
-import List from './component/list'
-import axios from 'axios';
+import List from './component/list';
+import Stateless from './component/stateless';
 
-const baseUrl = "http://pokeapi.co";
+
 
 class App extends Component {
-  render(){
-    return(
+
+  render() {
+
+
+    return (
+
+      <div>
       <List />
+      <Stateless />
+      </div>
 
     )
   }
