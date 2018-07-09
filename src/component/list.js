@@ -11,8 +11,7 @@ export default class List extends Component {
     super(props);
 
     this.state = {
-      title: "",
-      url: "",
+      title: "",      
       name:"",
       
     };
@@ -23,11 +22,12 @@ export default class List extends Component {
   }
 
   whatever() {
-    axios.get("https://jsonplaceholder.typicode.com/photos/4").then(response => {
+    var randomer2 = Math.floor((Math.random() * 100 ) +1)
+    axios.get("https://jsonplaceholder.typicode.com/photos/" + randomer2).then(response => {
         console.log(response);
         this.setState({
             title: response.data.title,
-            url: response.data.thumbnailUrl,
+            
 
             
 
@@ -51,7 +51,8 @@ export default class List extends Component {
 
   render() {
     return (
-      <div>                
+      <div>
+                        
         <button onClick={this.mcTester}>Click for a Star Wars Character </button>        
         <h1>Name: {this.state.name.name}</h1>
         <h1>Height: {this.state.name.height}</h1>
