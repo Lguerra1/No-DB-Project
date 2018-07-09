@@ -15,6 +15,7 @@ margin-right: 30%
 }
 
 button{
+    margin: 10px;
     float: left;
     color: royalblue;
     border: #303030;

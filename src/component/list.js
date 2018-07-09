@@ -13,7 +13,7 @@ export default class List extends Component {
     this.state = {
       title: "",
       url: "",
-      films:""
+      name:"",
       
     };
 
@@ -40,7 +40,7 @@ export default class List extends Component {
       axios.get("https://swapi.co/api/people/4").then(response => {
           console.log(response);
           this.setState({
-              name: response.data.films
+              name: response.data.name
 
           })
       })
@@ -52,11 +52,10 @@ export default class List extends Component {
     return (
       <div>                
         <button onClick={this.mcTester}>Click me for Star Wars </button>        
-        <h1>{this.state.films}</h1>
-        <img src={this.state.films}/>
-        <button onClick={this.whatever}>Click me for lauren impsum!</button>
+        <h1>{this.state.name}</h1>        
+        <button onClick={this.whatever}>Click me for some lauren impsum!</button>
         <h1>{this.state.title}</h1>
-        <img src={this.state.url}/>               
+                    
         </div>
 
 
