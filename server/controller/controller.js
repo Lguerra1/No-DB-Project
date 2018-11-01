@@ -2,11 +2,6 @@ var faker = require("faker");
 
 module.exports={
 
-  
-
-  // app.get("/", function (req, res) {
-  //   res.status(200).send({ message: 'Goku can beat up Superman!' });
-  // });
 
   users: (req, res) => {
     var data = ({
@@ -18,5 +13,7 @@ module.exports={
     res.status(200).send(data);
   }
 
+  
+  
 
 }
