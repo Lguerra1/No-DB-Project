@@ -21,15 +21,12 @@ export default class List extends Component {
 
   whatever() {
     var randomer = Math.floor((Math.random() * 900) + 1)
-    axios.get("http://pokeapi.co/api/v2/pokemon/" + randomer).then(response => {
+    axios.get("https://pokeapi-215911.firebaseapp.com/api/v2/pokemon/" + randomer).then(response => {
       console.log(response.data)
       this.setState({
         title: response.data,
-        sprite: response.data.sprites["front_default"],
-        back: response.data.sprites["back_default"]
-
-
-
+        sprite: response.data.sprites.front_default,
+        back: response.data.sprites.back_default
       })
 
     })
@@ -65,8 +62,8 @@ export default class List extends Component {
         <h1>Number: {this.state.title.order}</h1>
 
         <div className="pokeDisplay">
-          <div><img src={this.state.sprite} /></div>
-          <div><img src={this.state.back} /></div>
+          <div><img  src={this.state.sprite} /></div>
+          <div><img  src={this.state.back} /></div>
         </div>
 
       </div>

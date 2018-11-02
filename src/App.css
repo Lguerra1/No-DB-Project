@@ -83,3 +83,13 @@ margin-right: 30%,
     display: flex;
     justify-content: center;
 }
+
+img {
+    height: 200px;
+    width: 200px;
+    border: none
+}
+img:hover {
+    height: 300px;
+    width: 300px
+}
