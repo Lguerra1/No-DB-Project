@@ -10,7 +10,8 @@ export default class List extends Component {
     this.state = {
       title: [],
       name: "",
-
+      sprite: [],
+      back: []
     };
 
     this.whatever = this.whatever.bind(this);
@@ -21,10 +22,11 @@ export default class List extends Component {
   whatever() {
     var randomer = Math.floor((Math.random() * 900) + 1)
     axios.get("http://pokeapi.co/api/v2/pokemon/" + randomer).then(response => {
-      console.log(response);
+      console.log(response.data)
       this.setState({
-        title: response.data
-
+        title: response.data,
+        sprite: response.data.sprites["front_default"],
+        back: response.data.sprites["back_default"]
 
 
 
@@ -37,7 +39,6 @@ export default class List extends Component {
     var randomer = Math.floor((Math.random() * 100) + 1)
     axios.get("https://swapi.co/api/people/" + randomer).then(response => {
       console.log(response);
-     
       this.setState({
         name: response.data
 
@@ -48,8 +49,8 @@ export default class List extends Component {
 
 
   render() {
-    
     return (
+     
       <div>
 
         <button onClick={this.mcTester}>Click for a Star Wars Character </button>
@@ -61,8 +62,13 @@ export default class List extends Component {
         <button onClick={this.whatever}>Click for a random Pokemon</button>
         <h1>Name: {this.state.title.name}</h1>
         <h1>Height: {this.state.title.height}</h1>
-        <h1>Number: {this.state.title.order}</h1>        
-        {/* <img >{this.state.title.sprites.front_default}</img> */}
+        <h1>Number: {this.state.title.order}</h1>
+
+        <div className="pokeDisplay">
+          <div><img src={this.state.sprite} /></div>
+          <div><img src={this.state.back} /></div>
+        </div>
+
       </div>
 
     )
